@@ -1,7 +1,7 @@
 # The-layover
 
-The layover is app designed to help you you make the most out of travel's worst situation... THE LONG LAYOVER.
-    "The-Layover App" will gie the tools to use the brief time between flights to your greatest advatage, by helping you plan a  mini adventure before your actual vacation.  Use "The Layover App" correctly and you may just find the best part of your trip happened before you got there!
+The layover is an app designed to help you you make the most out of travel's worst situation... THE LONG LAYOVER.
+    "The-Layover App" will gie the tools to use the brief time between flights to your greatest advantage, by helping you plan a  mini adventure before your actual vacation.  Use "The Layover App" correctly and you may just find the best part of your trip happened before you got there!
 
     Technologies Used...
 
@@ -16,6 +16,7 @@ The layover is app designed to help you you make the most out of travel's worst 
      API - 
         Amadeus- Extensive Flight Search 
         Yelp Fusion API - points of interest
+        Google Maps API - 
 
 Tony - React & user Auth
 Owen - Node, Express

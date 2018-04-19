@@ -1,15 +1,23 @@
-// Our newest addition to the dependency family
-var mongoose = require("mongoose");
+const express = require('express');
+const mongoose = require('mongoose');
 
-// Requiring the `Travel` model for accessing the `travel` collection
-var Travel = require("./travelModel.js");
+const app = express();
 
-// By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
-// Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/schematravel", {
-  useMongoClient: true
-});
+//DB config
+const db = require('./config/keys').mongoURI;
+
+// connect to mongoDB
+mongoose
+.connect(db)
+.then(() => console.log('MongoDB Connected'))
+.catch(err => console.log(err));
+
+//route to home
+app.get('/', (req, res) => res.send('Hello Mongo'));
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 // Create an object containing dummy data to save to the database
 var data = {
@@ -19,14 +27,3 @@ var data = {
     "\"Don't worry if it doesn't work right. If everything did, you'd be out of a job\" - Mosher's Law of Software Engineering",
   number: 42
 };
-
-// Save a new Example using the data object
-Travel.create(data)
-  .then(function(dbTravel) {
-    // If saved successfully, print the new Example document to the console
-    console.log(dbTravel);
-  })
-  .catch(function(err) {
-    // If an error occurs, log the error message
-    console.log(err.message);
-  });
