@@ -16,6 +16,7 @@ The layover is an app designed to help you you make the most out of travel's wor
      API - 
         Amadeus- Extensive Flight Search 
         Yelp Fusion API - points of interest
+        Google Maps API - 
 
 Tony - React & user Auth
 Owen - Node, Express
